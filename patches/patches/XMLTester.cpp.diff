@@ -1,0 +1,11 @@
+--- source/test/XMLTester.cpp.orig	2008-03-26 05:34:04.000000000 +0100
++++ source/test/XMLTester.cpp	2008-03-26 05:34:15.000000000 +0100
+@@ -63,7 +63,7 @@
+ void
+ tolower(std::string& str)
+ {
+-	std::transform(str.begin(), str.end(), str.begin(), safe_ctype<std::tolower>);
++	std::transform(str.begin(), str.end(), str.begin(), (int(*)(int))std::tolower);
+ }
+ 
+ XMLTester::XMLTester()
